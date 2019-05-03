@@ -1,0 +1,5 @@
+parameters:
+
+services:
+    app.age_calculator.adult_identifier:
+        class: App\AgeCalculator\AdultIdentifier

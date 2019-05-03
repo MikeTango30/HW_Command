@@ -1,0 +1,15 @@
+parameters:
+
+services:
+    app.command.age_calculator_command:
+        class: App\Command\AgeCalculatorCommand
+        arguments:
+            $ageManager: '@app.age_calculator.age_manager'
+        tags:
+            -  { name: console.command }
+
+    app.age_calculator.age_manager:
+        class: App\AgeCalculator\AgeManager
+        arguments:
+            $ageCalculator: '@app.age_calculator.age_calculator'
+            $adultIdentifier: '@app.age_calculator.adult_identifier'
